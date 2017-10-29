@@ -6,4 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.mendezrodriguez.maps.MapsActivity" />
+    tools:context="com.example.mendezrodriguez.maps.MapsActivity"
+    map:mapType="normal"
+    map:uiCompass="true"
+    map:uiZoomControls="true"
+
+    />
