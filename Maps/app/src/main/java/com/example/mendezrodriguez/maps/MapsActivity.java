@@ -17,6 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -59,7 +60,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .fromResource(R.mipmap.mall)).anchor(0.0f, 1.0f).title("Menlyn Mall").position(MENLYN_PRETORIA));
 
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        CameraPosition cam = new CameraPosition.Builder().target(PROTEA_HOTEL).zoom(15).bearing(0).tilt(30).build();
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cam));
     }
 
     @Override
